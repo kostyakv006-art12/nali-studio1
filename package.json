@@ -1,0 +1,21 @@
+{
+  "name": "nail-studio",
+  "version": "1.0.0",
+  "description": "Сайт частного мастера маникюра с онлайн-записью и Telegram-ботом",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node --no-deprecation server.js",
+    "build": "esbuild src/server.js --bundle --platform=node --target=node18 --minify --legal-comments=none --outfile=server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "esbuild": "^0.28.2"
+  }
+}

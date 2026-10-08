@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alina Nails — частный мастер маникюра в Москве</title>
+  <meta name="description" content="Маникюр, педикюр и наращивание у частного мастера. Стерильно, аккуратно, без спешки. Онлайн-запись на удобное время." />
+  <meta name="theme-color" content="#F4ECE2" />
+  <link rel="icon" href="assets/nail-pink.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Кастомный курсор-ноготь: два SVG, переключение цвета через CSS -->
+  <div class="cursor" aria-hidden="true">
+    <img class="cursor__img cursor__img--base" src="assets/nail.svg" alt="" />
+    <img class="cursor__img cursor__img--pink" src="assets/nail-pink.svg" alt="" />
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">Alina<span>·</span>Nails</a>
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <a href="#about">О мастере</a>
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Работы</a>
+        <a href="#booking">Контакты</a>
+      </nav>
+      <a href="#booking" class="btn btn--small header__cta">Записаться</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Частный мастер · Москва</p>
+          <h1 class="hero__title reveal">Маникюр,<br />в котором <em>тихо</em><br />и красиво</h1>
+          <p class="hero__lead reveal">Аккуратная форма, стойкое покрытие и спокойные два часа только для вас. Без конвейера и спешки.</p>
+          <div class="hero__actions reveal">
+            <a href="#booking" class="btn">Выбрать время</a>
+            <a href="#portfolio" class="link-arrow">Смотреть работы <span>→</span></a>
+          </div>
+        </div>
+        <figure class="hero__media reveal reveal--zoom">
+          <img src="https://images.pexels.com/photos/18227812/pexels-photo-18227812.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Нанесение гель-лака крупным планом" fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- О МАСТЕРЕ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <figure class="about__photo reveal reveal--zoom">
+          <img src="https://images.pexels.com/photos/4677856/pexels-photo-4677856.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Мастер маникюра за работой" loading="lazy" />
+        </figure>
+        <div class="about__text">
+          <p class="eyebrow reveal">О мастере</p>
+          <h2 class="section__title reveal">Привет, я Алина</h2>
+          <p class="reveal">Шесть лет я делаю маникюр в небольшой уютной студии и принимаю одного гостя за раз. Люблю чистые линии, натуральные оттенки и ногти, которые выглядят ухоженно даже через три недели.</p>
+          <p class="reveal">Все инструменты проходят полный цикл стерилизации в сухожаре, пилки и бафы — одноразовые. Вам остаётся только выбрать цвет.</p>
+          <p class="about__sign reveal">Alina</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ВИДЕО -->
+    <section class="video-section" id="video" aria-label="Видео процесса">
+      <div class="video-frame reveal">
+        <!-- Видео без звука, в цикле, без элементов управления; любые взаимодействия заблокированы в script.js -->
+        <video id="processVideo" class="video-frame__video" autoplay muted loop playsinline preload="auto"
+          disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+          tabindex="-1" aria-hidden="true"></video>
+        <div class="video-frame__shield" aria-hidden="true"></div>
+        <div class="video-frame__caption">
+          <p class="eyebrow eyebrow--light">Процесс</p>
+          <p class="video-frame__quote">Каждая деталь —<br /><em>вручную</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal">Услуги</p>
+          <h2 class="section__title reveal">Что я делаю</h2>
+        </div>
+        <div class="services__list" id="servicesList" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ПОРТФОЛИО -->
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow reveal">Портфолио</p>
+            <h2 class="section__title reveal">Последние работы</h2>
+          </div>
+          <p class="section__note reveal">Нажмите на фото, чтобы рассмотреть</p>
+        </div>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- ЗАПИСЬ -->
+    <section class="section booking" id="booking">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="eyebrow reveal">Запись</p>
+          <h2 class="section__title reveal">Выберите удобное время</h2>
+          <p class="reveal">Свободные окна обновляются автоматически. После отправки заявки я подтвержу запись в Telegram или ВК — обычно в течение часа.</p>
+          <ul class="booking__info reveal">
+            <li><span>Адрес</span>Москва, ул. Примерная, 12</li>
+            <li><span>Часы</span>Ежедневно, 10:00 — 21:00</li>
+            <li><span>Телефон</span><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="bookingForm" novalidate>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Имя *</span>
+              <input type="text" name="name" autocomplete="given-name" maxlength="50" required placeholder="Как к вам обращаться" />
+              <span class="field__error"></span>
+            </label>
+            <label class="field field--narrow">
+              <span class="field__label">Возраст *</span>
+              <input type="number" name="age" inputmode="numeric" min="14" max="99" required placeholder="25" />
+              <span class="field__error"></span>
+            </label>
+          </div>
+
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Телефон *</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 (999) 000-00-00" />
+              <span class="field__error"></span>
+            </label>
+            <label class="field">
+              <span class="field__label">Telegram или ВК *</span>
+              <input type="text" name="contact" required placeholder="@username или vk.com/id" maxlength="100" />
+              <span class="field__error"></span>
+            </label>
+          </div>
+
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Услуга *</span>
+              <select name="service" required>
+                <option value="">Выберите услугу</option>
+              </select>
+              <span class="field__error"></span>
+            </label>
+            <label class="field field--narrow">
+              <span class="field__label">Примерная цена</span>
+              <input type="text" name="price" id="priceField" readonly tabindex="-1" placeholder="—" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Желаемая дата *</span>
+            <input type="date" name="date" required />
+            <span class="field__error"></span>
+          </label>
+
+          <fieldset class="field slots-field">
+            <legend class="field__label">Свободное время *</legend>
+            <div class="slots" id="slots"><p class="slots__hint">Сначала выберите дату</p></div>
+            <span class="field__error" data-for="time"></span>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__label">Комментарий</span>
+            <textarea name="comment" rows="3" maxlength="500" placeholder="Пожелания по дизайну, длине, цвету"></textarea>
+          </label>
+
+          <!-- honeypot против ботов -->
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <button type="submit" class="btn btn--full" id="submitBtn">
+            <span class="btn__label">Отправить заявку</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+          <p class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="logo logo--footer">Alina<span>·</span>Nails</a>
+      <nav class="footer__links" aria-label="Соцсети">
+        <a href="https://t.me/username" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.com/username" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> Alina Nails · Москва, ул. Примерная, 12</p>
+    </div>
+  </footer>
+
+  <!-- Лайтбокс -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото" hidden>
+    <button class="lightbox__btn lightbox__close" data-action="close" aria-label="Закрыть">×</button>
+    <button class="lightbox__btn lightbox__prev" data-action="prev" aria-label="Предыдущее фото">←</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" />
+      <figcaption class="lightbox__counter"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__next" data-action="next" aria-label="Следующее фото">→</button>
+  </div>
+
+  <!-- Уведомления -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
